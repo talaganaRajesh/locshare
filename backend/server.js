@@ -7,13 +7,10 @@ const app = express();
 const PORT = 5000;
 
 app.use(cors({
-  origin: ["https://locshare-frontend.vercel.app"],
-  methods: ["POST", "GET", "DELETE"],
+  origin: "https://locshare-frontend.vercel.app",
+  methods: ["POST", "GET", "DELETE", "OPTIONS"],
   credentials: true
 }));
-
-app.use(express.json());
-
 
 app.use(express.json());
 
@@ -83,3 +80,7 @@ app.delete('/api/location', async (req, res) => {
     res.status(500).json({ error: "Could not delete location" });
   }
 });
+
+// Handle preflight requests
+app.options('/api/location', cors());
+app.options('/api/locations', cors());
