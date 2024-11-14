@@ -41,7 +41,7 @@ function MapComponent() {
   }, []);
 
   useEffect(() => {
-    axios.get('https://locshare-2.vercel.app/')
+    axios.get('https://locshare-server.vercel.app/')
       .then(response => setLocations(response.data))
       .catch(error => console.error("Error fetching locations: ", error));
   }, []);
@@ -49,7 +49,7 @@ function MapComponent() {
   const handleShareLocation = (msg) => {
     if (userLocation) {
       if (!isSharing) {
-        axios.post('https://locshare-2.vercel.app/', {
+        axios.post('https://locshare-server.vercel.app/', {
           userId: "user123",
           latitude: userLocation.lat,
           longitude: userLocation.lng,
@@ -61,7 +61,7 @@ function MapComponent() {
         })
         .catch(error => console.error("Error sharing location: ", error));
       } else {
-        axios.delete('https://locshare-2.vercel.app/', {
+        axios.delete('https://locshare-server.vercel.app/', {
           data: { userId: "user123" }
         })
         .then(response => {
