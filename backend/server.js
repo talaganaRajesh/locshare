@@ -16,7 +16,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/locationApp', {
   .catch(err => console.log(err));
 
 const server = app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on https://vercel.com/docs/cli/about-telemetry`);
 });
 
 const wss = new WebSocket.Server({ server });
