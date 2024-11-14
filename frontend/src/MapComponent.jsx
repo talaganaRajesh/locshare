@@ -41,7 +41,7 @@ function MapComponent() {
   }, []);
 
   useEffect(() => {
-    axios.get('https://locshare-server.vercel.app/')
+    axios.get('https://locshare-server.vercel.app/api/locations')
       .then(response => setLocations(response.data))
       .catch(error => console.error("Error fetching locations: ", error));
   }, []);

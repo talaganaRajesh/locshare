@@ -7,8 +7,8 @@ const app = express();
 const PORT = 5000;
 
 app.use(cors({
-  origin: ["https://locshare-frontend.vercel.app/"],
-  methods: ["POST", "GET"],
+  origin: ["https://locshare-frontend.vercel.app"],
+  methods: ["POST", "GET", "DELETE"],
   credentials: true
 }));
 
