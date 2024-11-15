@@ -4,7 +4,7 @@ const cors = require('cors');
 const WebSocket = require('ws');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT|| 5000;
 
 app.use(cors({
   origin: "https://locshare-frontend.vercel.app",
