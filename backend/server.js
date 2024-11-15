@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Use environment variable for MongoDB connection string
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/locationApp';
+const MONGODB_URI ='mongodb://127.0.0.1:27017/locationApp';
 
 app.use(cors({
   origin: "https://locshare-2.onrender.com",
