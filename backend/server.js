@@ -84,3 +84,11 @@ app.delete('/api/location', async (req, res) => {
 // Handle preflight requests
 app.options('/api/location', cors());
 app.options('/api/locations', cors());
+
+
+try {
+  const connectionState = require('./connectionState');
+} catch (err) {
+  console.error('Error loading connectionState module:', err);
+  process.exit(1);
+}
